@@ -1,0 +1,27 @@
+This project provides a way to generate a ruby binding for the Activeworlds SDK.
+The current target version of the binding is the 4.1 version (build 66).
+
+I say generate because once the project is run, the .so file for the extension 
+is built, and can be ported wherever needed. 
+
+This binding takes certain liberties around the SDK, primarily doing everything
+possible to make it a more sane object-oriented design, and makes some attempt
+to hide the worst aspects of the SDK's design. One particular case is the that
+binding wraps all attributes available to a given callback in a hash that is
+returned to the ruby script.
+
+Addtionally, there is a ruby level wrapper to the binding that wraps calls that
+are made against the SDK, like sending a console message, so that only the 
+critical parameters are necessarily passed, and sane defaults are provided as
+an options hash for the other settings that might apply.
+
+This is a work in progress, with many pieces remaining untested. Sample programs
+are provided and implement the tested functions. 
+
+Currently this binding set is written using RubyInline to simplify the 
+development, but also to allow for a dynamic definition of the callbacks used by
+the SDK.
+
+The Linux AW SDK is not currently included because I'm unsure of the rules around this. 
+
+
