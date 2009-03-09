@@ -1,6 +1,7 @@
 require 'ruby_activeworld_enums'
 
-class RubyActiveworld
+module RubyActiveworldSupport
+  include RubyActiveworldEnums
   
   AW_BUILD                     = 65
   AW_MAX_AVCHANGE_PER_SECOND   = 10
