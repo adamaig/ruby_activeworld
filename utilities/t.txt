@@ -1,0 +1,845 @@
+  
+  void admin_world_delete_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("admin_world_delete_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_admin_world_delete(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_ADMIN_WORLD_DELETE,admin_world_delete_event_callback_hook));
+  }
+
+  
+  void admin_world_info_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("admin_world_info_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_admin_world_info(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_ADMIN_WORLD_INFO,admin_world_info_event_callback_hook));
+  }
+
+  
+  void avatar_add_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("avatar_add_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_avatar_add(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_AVATAR_ADD,avatar_add_event_callback_hook));
+  }
+
+  
+  void avatar_change_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("avatar_change_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_avatar_change(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_AVATAR_CHANGE,avatar_change_event_callback_hook));
+  }
+
+  
+  void avatar_click_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("avatar_click_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_avatar_click(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_AVATAR_CLICK,avatar_click_event_callback_hook));
+  }
+
+  
+  void avatar_delete_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("avatar_delete_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_avatar_delete(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_AVATAR_DELETE,avatar_delete_event_callback_hook));
+  }
+
+  
+  void avatar_reload_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("avatar_reload_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_avatar_reload(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_AVATAR_RELOAD,avatar_reload_event_callback_hook));
+  }
+
+  
+  void botgram_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("botgram_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_botgram(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_BOTGRAM,botgram_event_callback_hook));
+  }
+
+  
+  void botmenu_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("botmenu_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_botmenu(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_BOTMENU,botmenu_event_callback_hook));
+  }
+
+  
+  void camera_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("camera_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_camera(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_CAMERA,camera_event_callback_hook));
+  }
+
+  
+  void cell_begin_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("cell_begin_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_cell_begin(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_CELL_BEGIN,cell_begin_event_callback_hook));
+  }
+
+  
+  void cell_end_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("cell_end_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_cell_end(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_CELL_END,cell_end_event_callback_hook));
+  }
+
+  
+  void cell_object_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("cell_object_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_cell_object(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_CELL_OBJECT,cell_object_event_callback_hook));
+  }
+
+  
+  void chat_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("chat_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_chat(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_CHAT,chat_event_callback_hook));
+  }
+
+  
+  void console_message_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("console_message_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_console_message(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_CONSOLE_MESSAGE,console_message_event_callback_hook));
+  }
+
+  
+  void contact_state_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("contact_state_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_contact_state(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_CONTACT_STATE,contact_state_event_callback_hook));
+  }
+
+  
+  void entity_add_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("entity_add_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_entity_add(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_ENTITY_ADD,entity_add_event_callback_hook));
+  }
+
+  
+  void entity_change_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("entity_change_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_entity_change(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_ENTITY_CHANGE,entity_change_event_callback_hook));
+  }
+
+  
+  void entity_delete_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("entity_delete_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_entity_delete(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_ENTITY_DELETE,entity_delete_event_callback_hook));
+  }
+
+  
+  void entity_links_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("entity_links_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_entity_links(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_ENTITY_LINKS,entity_links_event_callback_hook));
+  }
+
+  
+  void entity_rider_add_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("entity_rider_add_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_entity_rider_add(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_ENTITY_RIDER_ADD,entity_rider_add_event_callback_hook));
+  }
+
+  
+  void entity_rider_change_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("entity_rider_change_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_entity_rider_change(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_ENTITY_RIDER_CHANGE,entity_rider_change_event_callback_hook));
+  }
+
+  
+  void entity_rider_delete_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("entity_rider_delete_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_entity_rider_delete(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_ENTITY_RIDER_DELETE,entity_rider_delete_event_callback_hook));
+  }
+
+  
+  void hud_clear_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("hud_clear_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_hud_clear(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_HUD_CLEAR,hud_clear_event_callback_hook));
+  }
+
+  
+  void hud_click_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("hud_click_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_hud_click(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_HUD_CLICK,hud_click_event_callback_hook));
+  }
+
+  
+  void hud_create_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("hud_create_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_hud_create(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_HUD_CREATE,hud_create_event_callback_hook));
+  }
+
+  
+  void hud_destroy_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("hud_destroy_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_hud_destroy(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_HUD_DESTROY,hud_destroy_event_callback_hook));
+  }
+
+  
+  void join_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("join_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_join(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_JOIN,join_event_callback_hook));
+  }
+
+  
+  void noise_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("noise_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_noise(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_NOISE,noise_event_callback_hook));
+  }
+
+  
+  void object_add_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("object_add_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_object_add(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_OBJECT_ADD,object_add_event_callback_hook));
+  }
+
+  
+  void object_bump_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("object_bump_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_object_bump(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_OBJECT_BUMP,object_bump_event_callback_hook));
+  }
+
+  
+  void object_click_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("object_click_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_object_click(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_OBJECT_CLICK,object_click_event_callback_hook));
+  }
+
+  
+  void object_delete_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("object_delete_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_object_delete(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_OBJECT_DELETE,object_delete_event_callback_hook));
+  }
+
+  
+  void object_select_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("object_select_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_object_select(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_OBJECT_SELECT,object_select_event_callback_hook));
+  }
+
+  
+  void send_file_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("send_file_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_send_file(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_SEND_FILE,send_file_event_callback_hook));
+  }
+
+  
+  void telegram_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("telegram_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_telegram(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_TELEGRAM,telegram_event_callback_hook));
+  }
+
+  
+  void teleport_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("teleport_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_teleport(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_TELEPORT,teleport_event_callback_hook));
+  }
+
+  
+  void terrain_begin_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("terrain_begin_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_terrain_begin(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_TERRAIN_BEGIN,terrain_begin_event_callback_hook));
+  }
+
+  
+  void terrain_changed_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("terrain_changed_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_terrain_changed(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_TERRAIN_CHANGED,terrain_changed_event_callback_hook));
+  }
+
+  
+  void terrain_data_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("terrain_data_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_terrain_data(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_TERRAIN_DATA,terrain_data_event_callback_hook));
+  }
+
+  
+  void terrain_end_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("terrain_end_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_terrain_end(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_TERRAIN_END,terrain_end_event_callback_hook));
+  }
+
+  
+  void toolbar_click_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("toolbar_click_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_toolbar_click(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_TOOLBAR_CLICK,toolbar_click_event_callback_hook));
+  }
+
+  
+  void universe_attributes_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("universe_attributes_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_universe_attributes(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_UNIVERSE_ATTRIBUTES,universe_attributes_event_callback_hook));
+  }
+
+  
+  void universe_disconnect_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("universe_disconnect_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_universe_disconnect(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_UNIVERSE_DISCONNECT,universe_disconnect_event_callback_hook));
+  }
+
+  
+  void url_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("url_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_url(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_URL,url_event_callback_hook));
+  }
+
+  
+  void url_click_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("url_click_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_url_click(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_URL_CLICK,url_click_event_callback_hook));
+  }
+
+  
+  void user_info_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("user_info_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_user_info(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_USER_INFO,user_info_event_callback_hook));
+  }
+
+  
+  void voip_data_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("voip_data_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_voip_data(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_VOIP_DATA,voip_data_event_callback_hook));
+  }
+
+  
+  void world_attributes_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("world_attributes_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_world_attributes(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_WORLD_ATTRIBUTES,world_attributes_event_callback_hook));
+  }
+
+  
+  void world_disconnect_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("world_disconnect_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_world_disconnect(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_WORLD_DISCONNECT,world_disconnect_event_callback_hook));
+  }
+
+  
+  void world_info_event_callback_hook() {
+    rb_funcall(ruby_aw_instance(), rb_intern("world_info_event_callback"), 0);
+  }
+  static VALUE receive_aw_event_world_info(VALUE self) {
+    return INT2NUM(aw_instance_event_set(AW_EVENT_WORLD_INFO,world_info_event_callback_hook));
+  }
+
+  
+  void address_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("address_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_address(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_ADDRESS,address_callback_hook));
+  }
+
+  
+  void admin_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("admin_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_admin(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_ADMIN,admin_callback_hook));
+  }
+
+  
+  void admin_world_list_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("admin_world_list_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_admin_world_list(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_ADMIN_WORLD_LIST,admin_world_list_callback_hook));
+  }
+
+  
+  void admin_world_result_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("admin_world_result_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_admin_world_result(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_ADMIN_WORLD_RESULT,admin_world_result_callback_hook));
+  }
+
+  
+  void attributes_reset_result_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("attributes_reset_result_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_attributes_reset_result(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_ATTRIBUTES_RESET_RESULT,attributes_reset_result_callback_hook));
+  }
+
+  
+  void avatar_location_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("avatar_location_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_avatar_location(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_AVATAR_LOCATION,avatar_location_callback_hook));
+  }
+
+  
+  void botgram_result_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("botgram_result_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_botgram_result(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_BOTGRAM_RESULT,botgram_result_callback_hook));
+  }
+
+  
+  void botmenu_result_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("botmenu_result_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_botmenu_result(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_BOTMENU_RESULT,botmenu_result_callback_hook));
+  }
+
+  
+  void cav_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("cav_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_cav(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_CAV,cav_callback_hook));
+  }
+
+  
+  void cav_result_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("cav_result_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_cav_result(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_CAV_RESULT,cav_result_callback_hook));
+  }
+
+  
+  void cav_template_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("cav_template_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_cav_template(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_CAV_TEMPLATE,cav_template_callback_hook));
+  }
+
+  
+  void cav_template_result_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("cav_template_result_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_cav_template_result(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_CAV_TEMPLATE_RESULT,cav_template_result_callback_hook));
+  }
+
+  
+  void cell_result_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("cell_result_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_cell_result(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_CELL_RESULT,cell_result_callback_hook));
+  }
+
+  
+  void citizen_attributes_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("citizen_attributes_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_citizen_attributes(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_CITIZEN_ATTRIBUTES,citizen_attributes_callback_hook));
+  }
+
+  
+  void citizen_result_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("citizen_result_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_citizen_result(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_CITIZEN_RESULT,citizen_result_callback_hook));
+  }
+
+  
+  void contact_add_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("contact_add_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_contact_add(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_CONTACT_ADD,contact_add_callback_hook));
+  }
+
+  
+  void create_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("create_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_create(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_CREATE,create_callback_hook));
+  }
+
+  
+  void delete_all_objects_result_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("delete_all_objects_result_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_delete_all_objects_result(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_DELETE_ALL_OBJECTS_RESULT,delete_all_objects_result_callback_hook));
+  }
+
+  
+  void enter_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("enter_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_enter(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_ENTER,enter_callback_hook));
+  }
+
+  
+  void hud_result_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("hud_result_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_hud_result(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_HUD_RESULT,hud_result_callback_hook));
+  }
+
+  
+  void immigrate_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("immigrate_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_immigrate(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_IMMIGRATE,immigrate_callback_hook));
+  }
+
+  
+  void join_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("join_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_join(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_JOIN,join_callback_hook));
+  }
+
+  
+  void license_attributes_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("license_attributes_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_license_attributes(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_LICENSE_ATTRIBUTES,license_attributes_callback_hook));
+  }
+
+  
+  void license_result_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("license_result_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_license_result(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_LICENSE_RESULT,license_result_callback_hook));
+  }
+
+  
+  void login_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("login_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_login(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_LOGIN,login_callback_hook));
+  }
+
+  
+  void object_result_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("object_result_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_object_result(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_OBJECT_RESULT,object_result_callback_hook));
+  }
+
+  
+  void password_send_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("password_send_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_password_send(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_PASSWORD_SEND,password_send_callback_hook));
+  }
+
+  
+  void query_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("query_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_query(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_QUERY,query_callback_hook));
+  }
+
+  
+  void register_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("register_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_register(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_REGISTER,register_callback_hook));
+  }
+
+  
+  void reload_registry_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("reload_registry_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_reload_registry(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_RELOAD_REGISTRY,reload_registry_callback_hook));
+  }
+
+  
+  void send_file_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("send_file_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_send_file(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_SEND_FILE,send_file_callback_hook));
+  }
+
+  
+  void telegram_result_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("telegram_result_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_telegram_result(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_TELEGRAM_RESULT,telegram_result_callback_hook));
+  }
+
+  
+  void terrain_delete_all_result_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("terrain_delete_all_result_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_terrain_delete_all_result(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_TERRAIN_DELETE_ALL_RESULT,terrain_delete_all_result_callback_hook));
+  }
+
+  
+  void terrain_load_node_result_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("terrain_load_node_result_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_terrain_load_node_result(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_TERRAIN_LOAD_NODE_RESULT,terrain_load_node_result_callback_hook));
+  }
+
+  
+  void terrain_next_result_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("terrain_next_result_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_terrain_next_result(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_TERRAIN_NEXT_RESULT,terrain_next_result_callback_hook));
+  }
+
+  
+  void terrain_set_result_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("terrain_set_result_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_terrain_set_result(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_TERRAIN_SET_RESULT,terrain_set_result_callback_hook));
+  }
+
+  
+  void universe_ejection_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("universe_ejection_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_universe_ejection(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_UNIVERSE_EJECTION,universe_ejection_callback_hook));
+  }
+
+  
+  void universe_ejection_result_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("universe_ejection_result_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_universe_ejection_result(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_UNIVERSE_EJECTION_RESULT,universe_ejection_result_callback_hook));
+  }
+
+  
+  void user_list_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("user_list_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_user_list(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_USER_LIST,user_list_callback_hook));
+  }
+
+  
+  void world_ejection_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("world_ejection_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_world_ejection(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_WORLD_EJECTION,world_ejection_callback_hook));
+  }
+
+  
+  void world_ejection_result_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("world_ejection_result_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_world_ejection_result(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_WORLD_EJECTION_RESULT,world_ejection_result_callback_hook));
+  }
+
+  
+  void world_instance_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("world_instance_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_world_instance(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_WORLD_INSTANCE,world_instance_callback_hook));
+  }
+
+  
+  void world_list_callback_hook(int rc) {
+    rb_funcall(ruby_aw_instance(), rb_intern("world_list_callback"), 1, INT2FIX(rc));
+  }
+  static VALUE receive_aw_callback_world_list(VALUE self) {
+    return INT2NUM(aw_instance_callback_set(AW_CALLBACK_WORLD_LIST,world_list_callback_hook));
+  }
+  rb_define_method(cRubyActiveworld, "admin_world_delete_event_callback",(VALUE(*)(ANYARGS))admin_world_delete_event_callback,0);
+  rb_define_method(cRubyActiveworld, "admin_world_info_event_callback",(VALUE(*)(ANYARGS))admin_world_info_event_callback,0);
+  rb_define_method(cRubyActiveworld, "avatar_add_event_callback",(VALUE(*)(ANYARGS))avatar_add_event_callback,0);
+  rb_define_method(cRubyActiveworld, "avatar_change_event_callback",(VALUE(*)(ANYARGS))avatar_change_event_callback,0);
+  rb_define_method(cRubyActiveworld, "avatar_click_event_callback",(VALUE(*)(ANYARGS))avatar_click_event_callback,0);
+  rb_define_method(cRubyActiveworld, "avatar_delete_event_callback",(VALUE(*)(ANYARGS))avatar_delete_event_callback,0);
+  rb_define_method(cRubyActiveworld, "avatar_reload_event_callback",(VALUE(*)(ANYARGS))avatar_reload_event_callback,0);
+  rb_define_method(cRubyActiveworld, "botgram_event_callback",(VALUE(*)(ANYARGS))botgram_event_callback,0);
+  rb_define_method(cRubyActiveworld, "botmenu_event_callback",(VALUE(*)(ANYARGS))botmenu_event_callback,0);
+  rb_define_method(cRubyActiveworld, "camera_event_callback",(VALUE(*)(ANYARGS))camera_event_callback,0);
+  rb_define_method(cRubyActiveworld, "cell_begin_event_callback",(VALUE(*)(ANYARGS))cell_begin_event_callback,0);
+  rb_define_method(cRubyActiveworld, "cell_end_event_callback",(VALUE(*)(ANYARGS))cell_end_event_callback,0);
+  rb_define_method(cRubyActiveworld, "cell_object_event_callback",(VALUE(*)(ANYARGS))cell_object_event_callback,0);
+  rb_define_method(cRubyActiveworld, "chat_event_callback",(VALUE(*)(ANYARGS))chat_event_callback,0);
+  rb_define_method(cRubyActiveworld, "console_message_event_callback",(VALUE(*)(ANYARGS))console_message_event_callback,0);
+  rb_define_method(cRubyActiveworld, "contact_state_event_callback",(VALUE(*)(ANYARGS))contact_state_event_callback,0);
+  rb_define_method(cRubyActiveworld, "entity_add_event_callback",(VALUE(*)(ANYARGS))entity_add_event_callback,0);
+  rb_define_method(cRubyActiveworld, "entity_change_event_callback",(VALUE(*)(ANYARGS))entity_change_event_callback,0);
+  rb_define_method(cRubyActiveworld, "entity_delete_event_callback",(VALUE(*)(ANYARGS))entity_delete_event_callback,0);
+  rb_define_method(cRubyActiveworld, "entity_links_event_callback",(VALUE(*)(ANYARGS))entity_links_event_callback,0);
+  rb_define_method(cRubyActiveworld, "entity_rider_add_event_callback",(VALUE(*)(ANYARGS))entity_rider_add_event_callback,0);
+  rb_define_method(cRubyActiveworld, "entity_rider_change_event_callback",(VALUE(*)(ANYARGS))entity_rider_change_event_callback,0);
+  rb_define_method(cRubyActiveworld, "entity_rider_delete_event_callback",(VALUE(*)(ANYARGS))entity_rider_delete_event_callback,0);
+  rb_define_method(cRubyActiveworld, "hud_clear_event_callback",(VALUE(*)(ANYARGS))hud_clear_event_callback,0);
+  rb_define_method(cRubyActiveworld, "hud_click_event_callback",(VALUE(*)(ANYARGS))hud_click_event_callback,0);
+  rb_define_method(cRubyActiveworld, "hud_create_event_callback",(VALUE(*)(ANYARGS))hud_create_event_callback,0);
+  rb_define_method(cRubyActiveworld, "hud_destroy_event_callback",(VALUE(*)(ANYARGS))hud_destroy_event_callback,0);
+  rb_define_method(cRubyActiveworld, "join_event_callback",(VALUE(*)(ANYARGS))join_event_callback,0);
+  rb_define_method(cRubyActiveworld, "noise_event_callback",(VALUE(*)(ANYARGS))noise_event_callback,0);
+  rb_define_method(cRubyActiveworld, "object_add_event_callback",(VALUE(*)(ANYARGS))object_add_event_callback,0);
+  rb_define_method(cRubyActiveworld, "object_bump_event_callback",(VALUE(*)(ANYARGS))object_bump_event_callback,0);
+  rb_define_method(cRubyActiveworld, "object_click_event_callback",(VALUE(*)(ANYARGS))object_click_event_callback,0);
+  rb_define_method(cRubyActiveworld, "object_delete_event_callback",(VALUE(*)(ANYARGS))object_delete_event_callback,0);
+  rb_define_method(cRubyActiveworld, "object_select_event_callback",(VALUE(*)(ANYARGS))object_select_event_callback,0);
+  rb_define_method(cRubyActiveworld, "send_file_event_callback",(VALUE(*)(ANYARGS))send_file_event_callback,0);
+  rb_define_method(cRubyActiveworld, "telegram_event_callback",(VALUE(*)(ANYARGS))telegram_event_callback,0);
+  rb_define_method(cRubyActiveworld, "teleport_event_callback",(VALUE(*)(ANYARGS))teleport_event_callback,0);
+  rb_define_method(cRubyActiveworld, "terrain_begin_event_callback",(VALUE(*)(ANYARGS))terrain_begin_event_callback,0);
+  rb_define_method(cRubyActiveworld, "terrain_changed_event_callback",(VALUE(*)(ANYARGS))terrain_changed_event_callback,0);
+  rb_define_method(cRubyActiveworld, "terrain_data_event_callback",(VALUE(*)(ANYARGS))terrain_data_event_callback,0);
+  rb_define_method(cRubyActiveworld, "terrain_end_event_callback",(VALUE(*)(ANYARGS))terrain_end_event_callback,0);
+  rb_define_method(cRubyActiveworld, "toolbar_click_event_callback",(VALUE(*)(ANYARGS))toolbar_click_event_callback,0);
+  rb_define_method(cRubyActiveworld, "universe_attributes_event_callback",(VALUE(*)(ANYARGS))universe_attributes_event_callback,0);
+  rb_define_method(cRubyActiveworld, "universe_disconnect_event_callback",(VALUE(*)(ANYARGS))universe_disconnect_event_callback,0);
+  rb_define_method(cRubyActiveworld, "url_event_callback",(VALUE(*)(ANYARGS))url_event_callback,0);
+  rb_define_method(cRubyActiveworld, "url_click_event_callback",(VALUE(*)(ANYARGS))url_click_event_callback,0);
+  rb_define_method(cRubyActiveworld, "user_info_event_callback",(VALUE(*)(ANYARGS))user_info_event_callback,0);
+  rb_define_method(cRubyActiveworld, "voip_data_event_callback",(VALUE(*)(ANYARGS))voip_data_event_callback,0);
+  rb_define_method(cRubyActiveworld, "world_attributes_event_callback",(VALUE(*)(ANYARGS))world_attributes_event_callback,0);
+  rb_define_method(cRubyActiveworld, "world_disconnect_event_callback",(VALUE(*)(ANYARGS))world_disconnect_event_callback,0);
+  rb_define_method(cRubyActiveworld, "world_info_event_callback",(VALUE(*)(ANYARGS))world_info_event_callback,0);
+  rb_define_method(cRubyActiveworld, "address_callback",(VALUE(*)(ANYARGS))address_callback,1);
+  rb_define_method(cRubyActiveworld, "admin_callback",(VALUE(*)(ANYARGS))admin_callback,1);
+  rb_define_method(cRubyActiveworld, "admin_world_list_callback",(VALUE(*)(ANYARGS))admin_world_list_callback,1);
+  rb_define_method(cRubyActiveworld, "admin_world_result_callback",(VALUE(*)(ANYARGS))admin_world_result_callback,1);
+  rb_define_method(cRubyActiveworld, "attributes_reset_result_callback",(VALUE(*)(ANYARGS))attributes_reset_result_callback,1);
+  rb_define_method(cRubyActiveworld, "avatar_location_callback",(VALUE(*)(ANYARGS))avatar_location_callback,1);
+  rb_define_method(cRubyActiveworld, "botgram_result_callback",(VALUE(*)(ANYARGS))botgram_result_callback,1);
+  rb_define_method(cRubyActiveworld, "botmenu_result_callback",(VALUE(*)(ANYARGS))botmenu_result_callback,1);
+  rb_define_method(cRubyActiveworld, "cav_callback",(VALUE(*)(ANYARGS))cav_callback,1);
+  rb_define_method(cRubyActiveworld, "cav_result_callback",(VALUE(*)(ANYARGS))cav_result_callback,1);
+  rb_define_method(cRubyActiveworld, "cav_template_callback",(VALUE(*)(ANYARGS))cav_template_callback,1);
+  rb_define_method(cRubyActiveworld, "cav_template_result_callback",(VALUE(*)(ANYARGS))cav_template_result_callback,1);
+  rb_define_method(cRubyActiveworld, "cell_result_callback",(VALUE(*)(ANYARGS))cell_result_callback,1);
+  rb_define_method(cRubyActiveworld, "citizen_attributes_callback",(VALUE(*)(ANYARGS))citizen_attributes_callback,1);
+  rb_define_method(cRubyActiveworld, "citizen_result_callback",(VALUE(*)(ANYARGS))citizen_result_callback,1);
+  rb_define_method(cRubyActiveworld, "contact_add_callback",(VALUE(*)(ANYARGS))contact_add_callback,1);
+  rb_define_method(cRubyActiveworld, "create_callback",(VALUE(*)(ANYARGS))create_callback,1);
+  rb_define_method(cRubyActiveworld, "delete_all_objects_result_callback",(VALUE(*)(ANYARGS))delete_all_objects_result_callback,1);
+  rb_define_method(cRubyActiveworld, "enter_callback",(VALUE(*)(ANYARGS))enter_callback,1);
+  rb_define_method(cRubyActiveworld, "hud_result_callback",(VALUE(*)(ANYARGS))hud_result_callback,1);
+  rb_define_method(cRubyActiveworld, "immigrate_callback",(VALUE(*)(ANYARGS))immigrate_callback,1);
+  rb_define_method(cRubyActiveworld, "join_callback",(VALUE(*)(ANYARGS))join_callback,1);
+  rb_define_method(cRubyActiveworld, "license_attributes_callback",(VALUE(*)(ANYARGS))license_attributes_callback,1);
+  rb_define_method(cRubyActiveworld, "license_result_callback",(VALUE(*)(ANYARGS))license_result_callback,1);
+  rb_define_method(cRubyActiveworld, "login_callback",(VALUE(*)(ANYARGS))login_callback,1);
+  rb_define_method(cRubyActiveworld, "object_result_callback",(VALUE(*)(ANYARGS))object_result_callback,1);
+  rb_define_method(cRubyActiveworld, "password_send_callback",(VALUE(*)(ANYARGS))password_send_callback,1);
+  rb_define_method(cRubyActiveworld, "query_callback",(VALUE(*)(ANYARGS))query_callback,1);
+  rb_define_method(cRubyActiveworld, "register_callback",(VALUE(*)(ANYARGS))register_callback,1);
+  rb_define_method(cRubyActiveworld, "reload_registry_callback",(VALUE(*)(ANYARGS))reload_registry_callback,1);
+  rb_define_method(cRubyActiveworld, "send_file_callback",(VALUE(*)(ANYARGS))send_file_callback,1);
+  rb_define_method(cRubyActiveworld, "telegram_result_callback",(VALUE(*)(ANYARGS))telegram_result_callback,1);
+  rb_define_method(cRubyActiveworld, "terrain_delete_all_result_callback",(VALUE(*)(ANYARGS))terrain_delete_all_result_callback,1);
+  rb_define_method(cRubyActiveworld, "terrain_load_node_result_callback",(VALUE(*)(ANYARGS))terrain_load_node_result_callback,1);
+  rb_define_method(cRubyActiveworld, "terrain_next_result_callback",(VALUE(*)(ANYARGS))terrain_next_result_callback,1);
+  rb_define_method(cRubyActiveworld, "terrain_set_result_callback",(VALUE(*)(ANYARGS))terrain_set_result_callback,1);
+  rb_define_method(cRubyActiveworld, "universe_ejection_callback",(VALUE(*)(ANYARGS))universe_ejection_callback,1);
+  rb_define_method(cRubyActiveworld, "universe_ejection_result_callback",(VALUE(*)(ANYARGS))universe_ejection_result_callback,1);
+  rb_define_method(cRubyActiveworld, "user_list_callback",(VALUE(*)(ANYARGS))user_list_callback,1);
+  rb_define_method(cRubyActiveworld, "world_ejection_callback",(VALUE(*)(ANYARGS))world_ejection_callback,1);
+  rb_define_method(cRubyActiveworld, "world_ejection_result_callback",(VALUE(*)(ANYARGS))world_ejection_result_callback,1);
+  rb_define_method(cRubyActiveworld, "world_instance_callback",(VALUE(*)(ANYARGS))world_instance_callback,1);
+  rb_define_method(cRubyActiveworld, "world_list_callback",(VALUE(*)(ANYARGS))world_list_callback,1);
