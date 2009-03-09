@@ -2,7 +2,12 @@ require 'ruby_activeworld'
 require 'ruby_activeworld_support'
 
 class RubyAw < RubyActiveworld
-  
+
+  def initialize(host, port, global_bot=false)
+    super(host, port)
+    ruby_aw_bool_set(RubyActiveworld::AW_ENTER_GLOBAL, true);
+  end  
+
   def login(name, owner_id, privilege_pass, application="")
     ruby_aw_string_set(AW_LOGIN_NAME, name);
     ruby_aw_string_set(AW_LOGIN_PRIVILEGE_PASSWORD, privilege_pass);
@@ -10,13 +15,11 @@ class RubyAw < RubyActiveworld
     ruby_aw_string_set(AW_LOGIN_APPLICATION, application) if ! application.empty?
     ruby_aw_login
   end
-  
-  
-  
-  
-  
-  
-  
+
+  # This "registers" the bot as being interested in the named event
+  def receive(event) send("receive_#{event.to_s.downcase}") end
+
+=begin  
    builder.generate_event_callback :AW_EVENT_AVATAR_ADD, :AW_AVATAR_SESSION, :AW_AVATAR_NAME,
       :AW_AVATAR_X, :AW_AVATAR_Y, :AW_AVATAR_Z, :AW_AVATAR_YAW, :AW_AVATAR_TYPE, :AW_AVATAR_GESTURE, :AW_AVATAR_VERSION,
       :AW_AVATAR_CITIZEN, :AW_AVATAR_PRIVILEGE, :AW_AVATAR_PITCH, :AW_AVATAR_STATE, :AW_PLUGIN_STRING
@@ -46,4 +49,5 @@ class RubyAw < RubyActiveworld
     builder.generate_event_callback :AW_EVENT_WORLD_DISCONNECT, :AW_DISCONNECT_REASON
 
     # end callbacks and handlers
+=end
 end

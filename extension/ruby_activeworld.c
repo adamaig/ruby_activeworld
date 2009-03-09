@@ -122,7 +122,7 @@ static VALUE ruby_aw_data(VALUE self, VALUE attr) {
   return rb_tainted_str_new2(aw_data((AW_ATTRIBUTE) FIX2INT(attr), &length)); 
 }
 static VALUE ruby_aw_data_set(VALUE self, VALUE attr, VALUE val) {
-  return INT2FIX(aw_data_set((AW_ATTRIBUTE) FIX2INT(attr), StringValuePtr(val), (int) (RString(val)->len)));
+  return INT2FIX(aw_data_set((AW_ATTRIBUTE) FIX2INT(attr), StringValuePtr(val), (int) (RSTRING(val)->len)));
 }
 static VALUE ruby_aw_delete_all_objects(VALUE self) {
   return INT2FIX(aw_delete_all_objects ());
@@ -187,7 +187,7 @@ static VALUE ruby_aw_int(VALUE self, VALUE attr) {
   return INT2NUM(aw_int((AW_ATTRIBUTE) FIX2INT(attr))); 
 }
 static VALUE ruby_aw_int_set(VALUE self, VALUE attr, VALUE val) {
-  return INT2NUM(aw_int_set((AW_ATTRIBUTE) FIX2INT(attr), FIX2INT(val))); 
+  return INT2NUM(aw_int_set((AW_ATTRIBUTE) FIX2INT(attr), NUM2INT(val))); 
 }
 // L
 static VALUE ruby_aw_login(VALUE self) {
@@ -218,8 +218,6 @@ static VALUE ruby_aw_mover_set_state(VALUE self, VALUE _id, VALUE _state, VALUE 
   int model_num = FIX2INT(_model_num);
   return INT2FIX(aw_mover_set_state ( id,  state,  model_num));
 }
-
-# line 276 "./activeworlds/application.rb"
 static VALUE ruby_aw_mover_set_position(VALUE self, VALUE _id, VALUE _x, VALUE _y, VALUE _z, VALUE _yaw, VALUE _pitch, VALUE _roll) {
   int id = FIX2INT(_id);
   int x = FIX2INT(_x);
@@ -230,8 +228,6 @@ static VALUE ruby_aw_mover_set_position(VALUE self, VALUE _id, VALUE _x, VALUE _
   int roll = FIX2INT(_roll);
   return INT2FIX(aw_mover_set_position ( id,  x,  y,  z,  yaw,  pitch,  roll));
 }
-
-# line 277 "./activeworlds/application.rb"
 static VALUE ruby_aw_mover_rider_add(VALUE self, VALUE _id, VALUE _session, VALUE _dist, VALUE _angle, VALUE _y_delta, VALUE _yaw_delta, VALUE _pitch_delta) {
   int id = FIX2INT(_id);
   int session = FIX2INT(_session);
@@ -243,7 +239,6 @@ static VALUE ruby_aw_mover_rider_add(VALUE self, VALUE _id, VALUE _session, VALU
   return INT2FIX(aw_mover_rider_add ( id,  session,  dist,  angle,  y_delta,  yaw_delta,  pitch_delta));
 }
 
-# line 278 "./activeworlds/application.rb"
 static VALUE ruby_aw_mover_rider_change(VALUE self, VALUE _id, VALUE _session, VALUE _dist, VALUE _angle, VALUE _y_delta, VALUE _yaw_delta, VALUE _pitch_delta) {
   int id = FIX2INT(_id);
   int session = FIX2INT(_session);
@@ -255,14 +250,12 @@ static VALUE ruby_aw_mover_rider_change(VALUE self, VALUE _id, VALUE _session, V
   return INT2FIX(aw_mover_rider_change ( id,  session,  dist,  angle,  y_delta,  yaw_delta,  pitch_delta));
 }
 
-# line 279 "./activeworlds/application.rb"
 static VALUE ruby_aw_mover_rider_delete(VALUE self, VALUE _id, VALUE _session) {
   int id = FIX2INT(_id);
   int session = FIX2INT(_session);
   return INT2FIX(aw_mover_rider_delete ( id,  session));
 }
 
-# line 280 "./activeworlds/application.rb"
 static VALUE ruby_aw_mover_links(VALUE self, VALUE _id) {
   int id = FIX2INT(_id);
   return INT2FIX(aw_mover_links ( id));
@@ -303,7 +296,7 @@ static VALUE ruby_aw_query_5x5(VALUE self, VALUE x_sector, VALUE y_sector, VALUE
       seq[x][y] = FIX2INT(rb_ary_entry(t,y));
     }
   }
-  rc = aw_query(FIX2INT(x_sector), FIX2INT(y_sector), seq);
+  rc = aw_query_5x5(FIX2INT(x_sector), FIX2INT(y_sector), seq);
   for(x = 0; x < QUERY_5x5; ++x ) {
     t = rb_ary_entry(sequence, x);
     for(y = 0; y < QUERY_5x5; ++y) {
@@ -1539,10 +1532,10 @@ static VALUE receive_aw_callback_world_list(VALUE self) {
 #ifdef __cplusplus
 extern "C" {
 #endif
-  void Init_Ruby_Activeworld() {
+  void Init_ruby_activeworld() {
     cRubyActiveworld = rb_define_class("RubyActiveworld", rb_cObject);
     rb_define_alloc_func(cRubyActiveworld, ruby_aw_allocate);
-    rb_define_method(cRubyActiveworld, "ruby_activeworld_initialize", (VALUE(*)(ANYARGS))ruby_activeworld_initialize, 2);
+    rb_define_method(cRubyActiveworld, "initialize", (VALUE(*)(ANYARGS))ruby_activeworld_initialize, 2);
     // A
     rb_define_method(cRubyActiveworld, "ruby_aw_address", (VALUE(*)(ANYARGS))ruby_aw_address, 1);
     rb_define_method(cRubyActiveworld, "ruby_aw_avatar_click", (VALUE(*)(ANYARGS))ruby_aw_avatar_click, 1);
@@ -1582,7 +1575,7 @@ extern "C" {
     rb_define_method(cRubyActiveworld, "ruby_aw_float", (VALUE(*)(ANYARGS))ruby_aw_float, 1);
     rb_define_method(cRubyActiveworld, "ruby_aw_float_set", (VALUE(*)(ANYARGS))ruby_aw_float_set, 2);
     // I
-    rb_define_method(cRubyActiveworld, "ruby_aw_init", (VALUE(*)(ANYARGS))ruby_aw_init, 1);
+    rb_define_singleton_method(cRubyActiveworld, "ruby_aw_init", (VALUE(*)(ANYARGS))ruby_aw_init, 1);
     rb_define_method(cRubyActiveworld, "ruby_aw_instance_set", (VALUE(*)(ANYARGS))ruby_aw_instance_set, 1);
     rb_define_method(cRubyActiveworld, "ruby_aw_int", (VALUE(*)(ANYARGS))ruby_aw_int, 1);
     rb_define_method(cRubyActiveworld, "ruby_aw_int_set", (VALUE(*)(ANYARGS))ruby_aw_int_set, 2);
@@ -1645,7 +1638,7 @@ extern "C" {
     rb_define_method(cRubyActiveworld, "ruby_aw_terrain_load_node", (VALUE(*)(ANYARGS))ruby_aw_terrain_load_node, 0);
     rb_define_method(cRubyActiveworld, "ruby_aw_terrain_next", (VALUE(*)(ANYARGS))ruby_aw_terrain_next, 0);
     rb_define_method(cRubyActiveworld, "ruby_aw_tick", (VALUE(*)(ANYARGS))ruby_aw_tick, 0);
-    rb_define_method(cRubyActiveworld, "ruby_aw_toolbar_click", (VALUE(*)(ANYARGS))ruby_aw_toolbar_click, 0);
+//    rb_define_method(cRubyActiveworld, "ruby_aw_toolbar_click", (VALUE(*)(ANYARGS))ruby_aw_toolbar_click, 0);
     // U
     rb_define_method(cRubyActiveworld, "ruby_aw_universe_attributes_change", (VALUE(*)(ANYARGS))ruby_aw_universe_attributes_change, 0);
     rb_define_method(cRubyActiveworld, "ruby_aw_universe_ejection_add", (VALUE(*)(ANYARGS))ruby_aw_universe_ejection_add, 0);
