@@ -2,7 +2,7 @@ require 'ruby_activeworld'
 require 'ruby_activeworld_support'
 
 class RubyAw < RubyActiveworld
-  extend RubyActiveworldSupport
+  include RubyActiveworldSupport
   
   @@attrs_available_to = {}
   
@@ -13,7 +13,7 @@ class RubyAw < RubyActiveworld
       self.class.ruby_aw_init(AW_BUILD)
     end
     super(host, port)
-    ruby_aw_bool_set(RubyActiveworld::AW_ENTER_GLOBAL, global_bot);
+    ruby_aw_bool_set(AW_ENTER_GLOBAL, global_bot);
   end  
 
   def login(name, owner_id, privilege_pass, application="")
@@ -42,14 +42,14 @@ class RubyAw < RubyActiveworld
   end
   
   def aw_attribute_to_ruby(attribute)
-    send "ruby_aw_#{get_aw_attribute_type(attribute)}(#{attribute})"
+    eval "ruby_aw_#{get_aw_attribute_type(attribute)}(#{attribute})"
   end
   
   def get_aw_attribute_type(attribute)
     ATTRIBUTE_TYPE_MAP[attribute.to_sym]
   end
   
-  def attributes_available_to(callback, *attributes)
+  def self.attributes_available_to(callback, *attributes)
     @@attrs_available_to[callback] = attributes
   end
   
