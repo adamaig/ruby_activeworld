@@ -94,6 +94,9 @@ s = "AW_EVENT_ADMIN_WORLD_DELETE
     AW_CALLBACK_WORLD_LIST"
 
 meth ="  
+  VALUE %s(VALUE self%s) {
+    return Qnil;
+  }
   void %s_hook(%s) {
     rb_funcall(ruby_aw_instance(), rb_intern(\"%s\"), %s);
   }
@@ -111,8 +114,8 @@ s.split.each do |name|
   ruby_set_method_name = "receive_#{lname}"
   event = name =~ /event/i ? true : false
   ruby_callback_method_name = "#{lname.sub(/(aw_callback|aw_event)_/i,"")}#{"_event" if event}_callback"
-  c_callback_method_name = "ruby_#{lname}#{"_event" if event}_callback"
-  methods.push( meth % [ruby_callback_method_name, event ? "" : "int rc", ruby_callback_method_name, event ? "0" : "1, INT2FIX(rc)",
+  methods.push( meth % [ruby_callback_method_name, event ? "" : ", VALUE rc",
+    ruby_callback_method_name, event ? "" : "int rc", ruby_callback_method_name, event ? "0" : "1, INT2FIX(rc)",
     name.downcase,event ? "event" : "callback", name,ruby_callback_method_name] )
   defs.push( def_str % [ruby_callback_method_name, ruby_callback_method_name, event ? 0 : 1])
 end
