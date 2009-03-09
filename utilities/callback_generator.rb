@@ -104,7 +104,8 @@ meth ="
     return INT2NUM(aw_instance_%s_set(%s,%s_hook));
   }
 "
-def_str = "  rb_define_method(cRubyActiveworld, \"%s\",(VALUE(*)(ANYARGS))%s,%d);"
+def_str = "  rb_define_method(cRubyActiveworld, \"%s\",(VALUE(*)(ANYARGS))%s,%d);\n" +
+"  rb_define_method(cRubyActiveworld, \"receive_%s\",(VALUE(*)(ANYARGS))receive_%s,%d);"
 
 methods = []
 defs = []
@@ -117,7 +118,8 @@ s.split.each do |name|
   methods.push( meth % [ruby_callback_method_name, event ? "" : ", VALUE rc",
     ruby_callback_method_name, event ? "" : "int rc", ruby_callback_method_name, event ? "0" : "1, INT2FIX(rc)",
     name.downcase,event ? "event" : "callback", name,ruby_callback_method_name] )
-  defs.push( def_str % [ruby_callback_method_name, ruby_callback_method_name, event ? 0 : 1])
+  defs.push( def_str % [ruby_callback_method_name, ruby_callback_method_name, event ? 0 : 1,
+                        lname, lname, event ? 0 : 1])
 end
 
 puts methods.join("\n")

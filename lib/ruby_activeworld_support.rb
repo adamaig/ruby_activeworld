@@ -20,11 +20,11 @@ module RubyActiveworldSupport
   AW_OBJECT_VERSION_ZONE       = 1
   AW_OBJECT_VERSION_MOVER      = 1
   
-  def self.rc_sym(rc_int)
+  def rc_sym(rc_int)
     RETURN_CODE_MAP[rc_int][:error_symbol]
   end
   
-  def self.rc_msg(rc_int)
+  def rc_msg(rc_int)
     RETURN_CODE_MAP[rc_int][:error_explanation]
   end
   
