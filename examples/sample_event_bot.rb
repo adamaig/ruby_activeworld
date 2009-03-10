@@ -1,7 +1,8 @@
-$:.unshift "#{File.dirname(__FILE__})}/../lib"
+$:.unshift "#{File.dirname(__FILE__)}/../lib"
+require 'yaml'
 require 'ruby_aw.rb'
 
-$configs = YAML.load_file("configs.yml")
+$configs = YAML.load_file("configs.yml")[:simple_event_config]
 
 class SampleEventBot < RubyAw
   
