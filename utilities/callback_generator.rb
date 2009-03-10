@@ -104,7 +104,9 @@ meth ="
     return INT2NUM(aw_instance_%s_set(%s,%s_hook));
   }
 "
-def_str = "  rb_define_method(cRubyActiveworld, \"%s\",(VALUE(*)(ANYARGS))%s,%d);"
+def_str = \
+"  rb_define_method(cRubyActiveworld, \"%s\",(VALUE(*)(ANYARGS))%s,%d);\n" +
+"  rb_define_method(cRubyActiveworld, \"receive_%s\",(VALUE(*)(ANYARGS))receive_%s,%d);"
 
 methods = []
 defs = []
