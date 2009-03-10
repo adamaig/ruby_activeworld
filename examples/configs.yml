@@ -4,7 +4,7 @@
   :enter_global: true
   :citizen_id: 1
   :app_name: SampleBot
-  :worldname: otakhub
-  :password: atlqu3$tadm
-  :universe_server: atlantis.activeworlds.com
+  :worldname: <worldname>
+  :password: <password>
+  :universe_server: <server>
   
