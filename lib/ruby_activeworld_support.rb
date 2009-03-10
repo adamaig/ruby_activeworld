@@ -20,12 +20,30 @@ module RubyActiveworldSupport
   AW_OBJECT_VERSION_ZONE       = 1
   AW_OBJECT_VERSION_MOVER      = 1
   
+  # This class allows is for the generation of RubyActiveworld specific errors
+  class RubyActiveworldError < RuntimeError; end
+  
+  # call-seq:
+  #   rc_sym ruby_aw_init =>  :RC_SUCCESS
+  #   
+  # This returns the symbol corresponding to the return code name
   def rc_sym(rc_int)
     RETURN_CODE_MAP[rc_int][:error_symbol]
   end
   
+  # call-seq:
+  #   rc_msg ruby_aw_init => "Success: Return value from an asynchronous call..."
+  #   rc_msg some_failing_call => "This call failed due to ..." 
+  #
+  # This looks up return code's corresponding explanation.
   def rc_msg(rc_int)
     RETURN_CODE_MAP[rc_int][:error_explanation]
+  end
+  
+  def raise_on_error(rc_int)
+    if :RC_SUCCESS != rc_sym(rc_int)
+      throw RubyActiveworldError.new( "#{rc_int} : #{rc_msg(rc_int)}")
+    end
   end
   
   ATTRIBUTE_TYPE_MAP = { 

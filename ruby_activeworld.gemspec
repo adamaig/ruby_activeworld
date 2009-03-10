@@ -21,7 +21,7 @@ spec = Gem::Specification.new do |s|
 
   s.has_rdoc = false
   # s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "RubyActiveworlds", "--main", "README"]
-  s.requirements = " You must have libaw_sdk.41.so in your LD_LIBRARY_PATH. Specify this with "
+  s.requirements = " You must have libaw_sdk.41.so in your LD_LIBRARY_PATH."
 end
 
 if $0 == __FILE__
