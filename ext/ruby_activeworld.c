@@ -1,5 +1,5 @@
 #include "ruby.h"
-#include "../lib/Aw.h"
+#include "Aw.h"
 
 typedef struct { 
   void* c_self; 
