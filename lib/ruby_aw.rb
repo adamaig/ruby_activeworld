@@ -1,5 +1,5 @@
 require 'ruby_activeworld'
-require 'ruby_activeworld_support'
+require 'ruby_aw_support'
 
 class RubyAw < RubyActiveworld
   include RubyActiveworldSupport
@@ -35,8 +35,10 @@ class RubyAw < RubyActiveworld
 
   def attributes_for(callback)
     params = {}
-    @@attrs_available_to[callback].each do |aw_attr|
-      params[aw_attr] = aw_attribute_to_ruby(aw_attr)
+    unless @@attrs_available_to[callback].nil?
+      @@attrs_available_to[callback].each do |aw_attr|
+        params[aw_attr] = aw_attribute_to_ruby(aw_attr)
+      end
     end
     params
   end
@@ -49,36 +51,78 @@ class RubyAw < RubyActiveworld
     ATTRIBUTE_TYPE_MAP[attribute.to_sym]
   end
   
-  def self.attributes_available_to(callback, *attributes)
-    @@attrs_available_to[callback] = attributes
+  # nil arguments mean that the corresponding attribute isn't set/changed
+  def state_change(x=nil,y=nil,z=nil,yaw=nil,type=nil,gesture=nil,
+    pitch=nil,state=nil)
+    ruby_aw_int_set(AW_MY_X, x) unless x.nil?
+    ruby_aw_int_set(AW_MY_Y, y) unless y.nil?
+    ruby_aw_int_set(AW_MY_Z, z) unless z.nil?
+    ruby_aw_int_set(AW_MY_YAW, yaw) unless yaw.nil?
+    ruby_aw_int_set(AW_MY_TYPE, type) unless type.nil?
+    ruby_aw_int_set(AW_MY_GESTURE, gesture) unless gesture.nil?
+    ruby_aw_int_set(AW_MY_PITCH, pitch) unless pitch.nil?
+    ruby_aw_int_set(AW_MY_STATE, state) unless state.nil?
+    ruby_aw_state_change
   end
   
-  attributes_available_to :AW_EVENT_AVATAR_ADD, :AW_AVATAR_SESSION, :AW_AVATAR_NAME,
-      :AW_AVATAR_X, :AW_AVATAR_Y, :AW_AVATAR_Z, :AW_AVATAR_YAW, :AW_AVATAR_TYPE, :AW_AVATAR_GESTURE, :AW_AVATAR_VERSION,
-      :AW_AVATAR_CITIZEN, :AW_AVATAR_PRIVILEGE, :AW_AVATAR_PITCH, :AW_AVATAR_STATE, :AW_PLUGIN_STRING
+  # Wraps aw_console_message. Options are :red, :blue, :green, :bold, :italics
+  def console_message(session_id, message, options={})
+    ruby_aw_int_set(AW_CONSOLE_RED, options[:red] || 0)
+    ruby_aw_int_set(AW_CONSOLE_BLUE, options[:blue] || 0)
+    ruby_aw_int_set(AW_CONSOLE_GREEN, options[:green] || 0)
+    ruby_aw_bool_set(AW_CONSOLE_BOLD, options[:bold] || false)
+    ruby_aw_bool_set(AW_CONSOLE_ITALICS, options[:italics] || false)
+    ruby_aw_string_set(AW_CONSOLE_MESSAGE, message)
+    ruby_aw_console_message(session_id)
+  end
+  
+  # Wraps aw_teleport. Options are :world, :x, :y, :z, :yaw, :warp
+  def teleport(session_id, options={}) 
+    ruby_aw_string_set(AW_TELEPORT_WORLD, options[:world] || "")
+    ruby_aw_int_set(AW_TELEPORT_X, options[:x] || 0)
+    ruby_aw_int_set(AW_TELEPORT_Y, options[:y] || 0)
+    ruby_aw_int_set(AW_TELEPORT_Z, options[:z] || 0)
+    ruby_aw_int_set(AW_TELEPORT_YAW, options[:yaw] || 0)
+    ruby_aw_bool_set(AW_TELEPORT_WARP, options[:warp] || false)
+    ruby_aw_teleport(session_id)
+  end
+  
+  def world_object_change(object_update)
+    ruby_aw_int_set(AW_OBJECT_ID, object_update[:id] || 0)
+    ruby_aw_int_set(AW_OBJECT_TYPE, object_update[:type] || ruby_aw_int(AW_OBJECT_TYPE))
+    ruby_aw_string_set(AW_OBJECT_DESCRIPTION, object_update[:description] || ruby_aw_string(AW_OBJECT_DESCRIPTION))
+    ruby_aw_string_set(AW_OBJECT_ACTION, object_update[:action] || ruby_aw_string(AW_OBJECT_ACTION))
+    ruby_aw_string_set(AW_OBJECT_MODEL, object_update[:model] || ruby_aw_string(AW_OBJECT_MODEL))
+    ruby_aw_int_set(AW_OBJECT_OLD_NUMBER, 0)
+    ruby_aw_int_set(AW_OBJECT_OLD_X, 0)
+    ruby_aw_int_set(AW_OBJECT_OLD_Z, 0)
+    ruby_aw_int_set(AW_OBJECT_X, object_update[:x] || ruby_aw_int(AW_OBJECT_X))
+    ruby_aw_int_set(AW_OBJECT_Y, object_update[:y] || ruby_aw_int(AW_OBJECT_Y))
+    ruby_aw_int_set(AW_OBJECT_Z, object_update[:z] || ruby_aw_int(AW_OBJECT_Z))
+    ruby_aw_int_set(AW_OBJECT_YAW, object_update[:yaw] || ruby_aw_int(AW_OBJECT_YAW))
+    ruby_aw_int_set(AW_OBJECT_TILT, object_update[:tilt] || ruby_aw_int(AW_OBJECT_TILT))
+    ruby_aw_int_set(AW_OBJECT_ROLL, object_update[:roll] || ruby_aw_int(AW_OBJECT_ROLL))
+    ruby_aw_int_set(AW_OBJECT_OWNER, object_update[:owner] || ruby_aw_int(AW_OBJECT_OWNER))
+    ruby_aw_object_change
+  end
+  
+  def url_send(session, url, target_window=nil)
+    ruby_aw_url_send(session, url, target_window)
+  end
+  
+  def add_world_ejection(citizen_id, session, expiration=0, comment="Account disabled")
+    ruby_aw_int_set AW_EJECTION_TYPE, AW_EJECT_BY_CITIZEN
+    ruby_aw_int_set(AW_EJECTION_ADDRESS, citizen_id)
+    ruby_aw_int_set(AW_EJECTION_EXPIRATION_TIME, expiration.to_i)
+    ruby_aw_string_set(AW_EJECTION_COMMENT, comment)
+    ruby_aw_world_ejection_add
+    world_eject session
+  end
 
-  attributes_available_to :AW_EVENT_AVATAR_DELETE, :AW_AVATAR_SESSION, :AW_AVATAR_NAME,
-      :AW_AVATAR_X, :AW_AVATAR_Y, :AW_AVATAR_Z, :AW_AVATAR_YAW, :AW_AVATAR_TYPE, :AW_AVATAR_GESTURE, :AW_AVATAR_VERSION,
-      :AW_AVATAR_CITIZEN, :AW_AVATAR_PRIVILEGE, :AW_AVATAR_PITCH, :AW_AVATAR_STATE, :AW_PLUGIN_STRING
-
-  attributes_available_to :AW_EVENT_CHAT, :AW_AVATAR_NAME, :AW_CHAT_SESSION, :AW_CHAT_TYPE, :AW_CHAT_MESSAGE
-  attributes_available_to :AW_EVENT_AVATAR_CLICK, :AW_AVATAR_NAME, :AW_AVATAR_SESSION, :AW_CLICKED_NAME, :AW_CLICKED_SESSION
-
-  attributes_available_to :AW_EVENT_USER_INFO, :AW_USERLIST_ID, :AW_USERLIST_NAME, :AW_USERLIST_WORLD, 
-      :AW_USERLIST_CITIZEN, :AW_USERLIST_STATE
-
-  attributes_available_to :AW_EVENT_OBJECT_ADD, :AW_OBJECT_SESSION, :AW_CELL_SEQUENCE, 
-      :AW_CELL_X, :AW_CELL_Z, :AW_OBJECT_TYPE, :AW_OBJECT_ID, :AW_OBJECT_NUMBER, :AW_OBJECT_OWNER, 
-      :AW_OBJECT_BUILD_TIMESTAMP, :AW_OBJECT_X, :AW_OBJECT_Y, :AW_OBJECT_Z, :AW_OBJECT_YAW, :AW_OBJECT_TILT, 
-      :AW_OBJECT_ROLL, :AW_OBJECT_MODEL, :AW_OBJECT_DESCRIPTION, :AW_OBJECT_ACTION, :AW_OBJECT_DATA
-
-  attributes_available_to :AW_EVENT_OBJECT_DELETE, :AW_OBJECT_SESSION, :AW_CELL_SEQUENCE, 
-      :AW_CELL_X, :AW_CELL_Z, :AW_OBJECT_ID, :AW_OBJECT_NUMBER
-
-  attributes_available_to :AW_EVENT_URL, :AW_AVATAR_SESSION, :AW_AVATAR_NAME, :AW_URL_NAME, :AW_URL_POST,
-      :AW_URL_TARGET, :AW_URL_TARGET_3D
-
-  attributes_available_to :AW_EVENT_UNIVERSE_DISCONNECT, :AW_DISCONNECT_REASON  
-  attributes_available_to :AW_EVENT_WORLD_DISCONNECT, :AW_DISCONNECT_REASON
-
+  # eject session for 1 second to force out of world
+  def world_eject(session,time=1)
+    ruby_aw_int_set AW_EJECT_SESSION, session
+    ruby_aw_int_set AW_EJECT_DURATION, time
+    ruby_aw_world_eject
+  end
 end
