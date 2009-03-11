@@ -1562,7 +1562,6 @@ extern "C" {
     rb_define_method(cRubyActiveworld, "ruby_aw_citizen_previous", (VALUE(*)(ANYARGS))ruby_aw_citizen_previous, 0);
     rb_define_method(cRubyActiveworld, "ruby_aw_console_message", (VALUE(*)(ANYARGS))ruby_aw_console_message, 1);
 
-    
     // D
     rb_define_method(cRubyActiveworld, "ruby_aw_data", (VALUE(*)(ANYARGS))ruby_aw_data, 1);
     rb_define_method(cRubyActiveworld, "ruby_aw_data_set", (VALUE(*)(ANYARGS))ruby_aw_data, 2);  
@@ -1616,17 +1615,6 @@ extern "C" {
     // S
     rb_define_method(cRubyActiveworld, "ruby_aw_say", (VALUE(*)(ANYARGS))ruby_aw_say, 1);
     rb_define_method(cRubyActiveworld, "ruby_aw_sector_from_cell", (VALUE(*)(ANYARGS))ruby_aw_sector_from_cell, 1);
-    rb_define_method(cRubyActiveworld, "ruby_aw_server_world_add", (VALUE(*)(ANYARGS))ruby_aw_server_world_add, 0);
-    //int   aw_server_admin (const char* domain, int port, char* password, void** instance);
-    rb_define_method(cRubyActiveworld, "ruby_aw_server_world_change", (VALUE(*)(ANYARGS))ruby_aw_server_world_change, 1);
-    rb_define_method(cRubyActiveworld, "ruby_aw_server_world_delete", (VALUE(*)(ANYARGS))ruby_aw_server_world_delete, 1);
-    rb_define_method(cRubyActiveworld, "ruby_aw_server_world_instance_add", (VALUE(*)(ANYARGS))ruby_aw_server_world_instance_add, 2);
-    rb_define_method(cRubyActiveworld, "ruby_aw_server_world_instance_delete", (VALUE(*)(ANYARGS))ruby_aw_server_world_instance_delete, 2);
-    rb_define_method(cRubyActiveworld, "ruby_aw_server_world_instance_set", (VALUE(*)(ANYARGS))ruby_aw_server_world_instance_set, 1);
-    rb_define_method(cRubyActiveworld, "ruby_aw_server_world_list", (VALUE(*)(ANYARGS))ruby_aw_server_world_list, 0);
-    rb_define_method(cRubyActiveworld, "ruby_aw_server_world_set", (VALUE(*)(ANYARGS))ruby_aw_server_world_set, 1);
-    rb_define_method(cRubyActiveworld, "ruby_aw_server_world_start", (VALUE(*)(ANYARGS))ruby_aw_server_world_start, 1);
-    rb_define_method(cRubyActiveworld, "ruby_aw_server_world_stop", (VALUE(*)(ANYARGS))ruby_aw_server_world_stop, 1);
     rb_define_method(cRubyActiveworld, "ruby_aw_session", (VALUE(*)(ANYARGS))ruby_aw_session, 0);
     rb_define_method(cRubyActiveworld, "ruby_aw_state_change", (VALUE(*)(ANYARGS))ruby_aw_state_change, 0);
     rb_define_method(cRubyActiveworld, "ruby_aw_string", (VALUE(*)(ANYARGS))ruby_aw_string, 1);

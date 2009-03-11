@@ -1,7 +1,11 @@
-require 'ruby_activeworld_enums'
+require 'ruby_aw_enums'
+require 'ruby_aw_event_attributes'
+require 'ruby_aw_callback_attributes'
 
 module RubyActiveworldSupport
-  include RubyActiveworldEnums
+  include RubyAwEnums
+  include RubyAwEventAttributes
+  include RubyAwCallbackAttributes
   
   AW_BUILD                     = 65
   AW_MAX_AVCHANGE_PER_SECOND   = 10
@@ -180,6 +184,7 @@ module RubyActiveworldSupport
     :AW_MY_Z => :int,
     :AW_OBJECT_BUILD_TIMESTAMP => :int,
     :AW_OBJECT_CALLBACK_REFERENCE => :int,
+    :AW_OBJECT_DATA => :data,
     :AW_OBJECT_ID => :int,
     :AW_OBJECT_NUMBER => :int,
     :AW_OBJECT_OLD_NUMBER => :int,
