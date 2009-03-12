@@ -20,14 +20,17 @@ an options hash for the other settings that might apply.
 This is a work in progress, with many pieces remaining untested. Sample programs
 are provided and implement the tested functions. 
 
-The license for the AWSDK is repeated here, and the code is included in the 
-extension because I don't see anything in the license that restricts it.
+The license for the AWSDK is repeated here, but currently you must have the 
+library on your system. 
 
 == Installation Note
 
 I haven't worked out a great way to get the AW SDK installed as part of this 
 process, so you'll have to specify the directory the library is in with the
-option --with-awsdk-dir=
+option --with-awsdk-dir= . Note that this option requires that you have lib
+and include dirs under the directory pointed to, otherwise use 
+--with-awsdk-lib= and --with-awsdk-include= to point to your libaw_sdk.41.so
+and Aw.h respectively.
 
 I hope to get a post-compile hook implemented that will allow this to be done
 automagically.
