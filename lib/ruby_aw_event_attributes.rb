@@ -8,6 +8,10 @@ module RubyAwEventAttributes
     @@attrs_available_to[event] = attributes
   end
   
+  def self.event_attribute_hash
+    @@attrs_available_to
+  end
+
   event_attributes_for :AW_EVENT_AVATAR_ADD, :AW_AVATAR_SESSION, :AW_AVATAR_NAME,
     :AW_AVATAR_X, :AW_AVATAR_Y, :AW_AVATAR_Z, :AW_AVATAR_YAW, :AW_AVATAR_TYPE, 
     :AW_AVATAR_GESTURE, :AW_AVATAR_VERSION, :AW_AVATAR_CITIZEN, :AW_AVATAR_PRIVILEGE, 

@@ -2,15 +2,17 @@ require 'ruby_activeworld'
 require 'ruby_aw_support'
 
 class RubyAw < RubyActiveworld
-  include RubyActiveworldSupport
-  
+
   @@attrs_available_to = {}
+  include RubyAwSupport
   
   def initialize(host, port, global_bot=false)
     @@init_run ||= false
     if ! @@init_run
       @@init_run = true
       self.class.ruby_aw_init(AW_BUILD)
+      @@attrs_available_to.merge!(RubyAwEventAttributes.event_attribute_hash)
+      @@attrs_available_to.merge!(RubyAwCallbackAttributes.callback_attribute_hash)
     end
     super(host, port)
     ruby_aw_bool_set(AW_ENTER_GLOBAL, global_bot);

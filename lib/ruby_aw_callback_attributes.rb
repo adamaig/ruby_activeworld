@@ -8,6 +8,10 @@ module RubyAwCallbackAttributes
     @@attrs_available_to[callback] = attributes
   end
   
+  def self.callback_attribute_hash
+    @@attrs_available_to
+  end
+
   callback_attributes_for :AW_CALLBACK_ADDRESS, :AW_AVATAR_SESSION, :AW_AVATAR_ADDRESS
   callback_attributes_for :AW_CALLBACK_AVATAR_LOCATION, :AW_AVATAR_SESSION,
     :AW_AVATAR_NAME, :AW_AVATAR_X, :AW_AVATAR_Y, :AW_AVATAR_Z, :AW_AVATAR_YAW, :AW_AVATAR_PITCH,

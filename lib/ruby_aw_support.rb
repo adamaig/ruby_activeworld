@@ -2,7 +2,7 @@ require 'ruby_aw_enums'
 require 'ruby_aw_event_attributes'
 require 'ruby_aw_callback_attributes'
 
-module RubyActiveworldSupport
+module RubyAwSupport
   include RubyAwEnums
   include RubyAwEventAttributes
   include RubyAwCallbackAttributes
