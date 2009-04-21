@@ -3,6 +3,8 @@ require 'ruby_aw_support'
 
 class RubyAw < RubyActiveworld
 
+  attr_accessor :params
+  
   @@attrs_available_to = {}
   include RubyAwSupport
   
@@ -15,9 +17,22 @@ class RubyAw < RubyActiveworld
       @@attrs_available_to.merge!(RubyAwCallbackAttributes.callback_attribute_hash)
     end
     super(host, port)
+    @params = {}
     ruby_aw_bool_set(AW_ENTER_GLOBAL, global_bot);
   end  
 
+  alias :base_aw_string_set :ruby_aw_string_set
+  alias :base_aw_data_set :ruby_aw_data_set
+
+  def ruby_aw_string_set(aw_attr,str,length=AW_MAX_ATTRIBUTE_LENGTH)
+    base_aw_string_set(aw_attr,str[0,length])
+  end
+  
+  def ruby_aw_data_set(aw_attr,data_buffer,length=AW_MAX_DATA_ATTRIBUTE_LENGTH)
+    base_aw_data_set(aw_attr,data_buffer[0,length],
+      length > AW_MAX_DATA_ATTRIBUTE_LENGTH ? AW_MAX_DATA_ATTRIBUTE_LENGTH : length )
+  end
+  
   def login(name, owner_id, privilege_pass, application="")
     ruby_aw_string_set(AW_LOGIN_NAME, name);
     ruby_aw_string_set(AW_LOGIN_PRIVILEGE_PASSWORD, privilege_pass);
@@ -27,6 +42,7 @@ class RubyAw < RubyActiveworld
   end
   
   def enter(worldname)
+    @params[:worldname] = worldname
     rc_sym ruby_aw_enter(worldname)
   end
   
@@ -36,13 +52,13 @@ class RubyAw < RubyActiveworld
   end
 
   def attributes_for(callback)
-    params = {}
+    aw_params = {}
     unless @@attrs_available_to[callback].nil?
       @@attrs_available_to[callback].each do |aw_attr|
-        params[aw_attr] = aw_attribute_to_ruby(aw_attr)
+        aw_params[aw_attr] = aw_attribute_to_ruby(aw_attr)
       end
     end
-    params
+    aw_params
   end
   
   def aw_attribute_to_ruby(attribute)

@@ -124,7 +124,8 @@ static VALUE ruby_aw_console_message(VALUE self, VALUE session_id) {
 // D
 static VALUE ruby_aw_data(VALUE self, VALUE attr) { 
   unsigned int length = 0; 
-  return rb_tainted_str_new2(aw_data((AW_ATTRIBUTE) FIX2INT(attr), &length)); 
+  char* data = aw_data((AW_ATTRIBUTE) FIX2INT(attr), &length);
+  return rb_tainted_str_new2( NULL == data ? "" : data); 
 }
 static VALUE ruby_aw_data_set(VALUE self, VALUE attr, VALUE val) {
   return INT2FIX(aw_data_set((AW_ATTRIBUTE) FIX2INT(attr), StringValuePtr(val), (int) (RSTRING(val)->len)));
