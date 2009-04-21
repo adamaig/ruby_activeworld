@@ -1,9 +1,10 @@
 # This module defines the collections of attributes available for event
 # callbacks.
 # 
-module RubyAwEventAttributes
+module RubyAwCallbackAttributes
   
   def self.callback_attributes_for(callback, *attributes)
+    @@attrs_available_to ||= {}
     @@attrs_available_to[callback] = attributes
   end
   
@@ -57,7 +58,7 @@ module RubyAwEventAttributes
   callback_attributes_for :AW_CALLBACK_TERRAIN_SET_RESULT, :AW_TERRAIN_X, :AW_TERRAIN_Z
   
   callback_attributes_for :AW_CALLBACK_USER_LIST, :AW_USERLIST_MORE
-  callback_attributes_for :AW_CALLBACK_UNIVERSE_EJECTION, :AW_EJECTION_ADDRESS
+  callback_attributes_for :AW_CALLBACK_UNIVERSE_EJECTION, :AW_EJECTION_ADDRESS,
     :AW_EJECTION_CREATION_TIME, :AW_EJECTION_EXPIRATION_TIME, :AW_EJECTION_COMMENT
     
   callback_attributes_for :AW_CALLBACK_WORLD_LIST, :AW_WORLDLIST_MORE

@@ -16,10 +16,9 @@ spec = Gem::Specification.new do |s|
   s.extensions = ["ext/extconf.rb"]
   candidates = ["examples/configs.yml", "examples/sample_event_bot.rb", 
     "ext/ruby_activeworld.c",
-    "lib/ruby_activeworld_enums.rb", "lib/ruby_activeworld_support.rb", "lib/ruby_aw.rb", 
     "utilities/aw_enums_and_constants.rb", "utilities/callback_generator.rb", 
     "utilities/ruby_activeworld_enums.rb", "utilities/t.txt"]
-
+  candidates += Dir["lib/**/*"].entries
   s.files = ["README"] + candidates
 
   s.require_paths = ["ext","lib"]

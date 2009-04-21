@@ -4,6 +4,7 @@
 module RubyAwEventAttributes
   
   def self.event_attributes_for(event, *attributes)
+    @@attrs_available_to ||= {}
     @@attrs_available_to[event] = attributes
   end
   
@@ -22,7 +23,7 @@ module RubyAwEventAttributes
   
   event_attributes_for :AW_EVENT_BOTMENU, :AW_BOTMENU_FROM_NAME, 
     :AW_BOTMENU_FROM_SESSION, :AW_BOTMENU_QUESTION, :AW_BOTMENU_ANSWER
-  event_attributes_for :AW_EVENT_BOTGRAM, AW_BOTGRAM_FROM_NAME, 
+  event_attributes_for :AW_EVENT_BOTGRAM, :AW_BOTGRAM_FROM_NAME, 
     :AW_BOTGRAM_FROM, :AW_BOTGRAM_TEXT
   
   event_attributes_for :AW_EVENT_CHAT, :AW_AVATAR_NAME, :AW_CHAT_SESSION, 
@@ -36,7 +37,7 @@ module RubyAwEventAttributes
     :AW_OBJECT_YAW, :AW_OBJECT_TILT, :AW_OBJECT_ROLL, :AW_OBJECT_MODEL, 
     :AW_OBJECT_DESCRIPTION, :AW_OBJECT_ACTION, :AW_OBJECT_DATA
   event_attributes_for :AW_EVENT_CONSOLE_MESSAGE, :AW_CONSOLE_RED, 
-    :AW_CONSOLE_GREEN, :AW_CONSOLE_BLUE, :AW_CONSOLE_MESSAGE, AW_CONSOLE_BOLD, 
+    :AW_CONSOLE_GREEN, :AW_CONSOLE_BLUE, :AW_CONSOLE_MESSAGE, :AW_CONSOLE_BOLD, 
     :AW_CONSOLE_ITALICS
   
   event_attributes_for :AW_EVENT_ENTITY_ADD, :AW_ENTITY_TYPE, :AW_ENTITY_ID,
@@ -191,7 +192,7 @@ module RubyAwEventAttributes
     :AW_WORLD_MOVER_EMPTY_RESET_TIMEOUT, :AW_WORLD_MOVER_USED_RESET_TIMEOUT
   
   event_attributes_for :AW_EVENT_WORLD_DISCONNECT, :AW_DISCONNECT_REASON
-  event_attributes_for :AW_EVENT_WORLD_INFO, :AW_WORLDLIST_NAME
+  event_attributes_for :AW_EVENT_WORLD_INFO, :AW_WORLDLIST_NAME,
     :AW_WORLDLIST_USERS, :AW_WORLDLIST_STATUS, :AW_WORLDLIST_RATING
     
 end

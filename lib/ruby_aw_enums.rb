@@ -1,4 +1,4 @@
-module RubyActiveworldEnums
+module RubyAwEnums
   def self.enums; @@ENUMS.keys; end;
 
   def self.aw_attribute(v=nil)
