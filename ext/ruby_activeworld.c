@@ -7,6 +7,27 @@ typedef struct {
 } RUBY_AW_APPLICATION; 
 
 static VALUE cRubyActiveworld;
+static VALUE sAWVector;      // ruby equivalent to aw_type_vector
+static VALUE sAWVectorRange; // ruby equivalent to aw_type_vector_range
+static VALUE sAWObjectDataZone; // ruby equivalent to aw_object_data_zone
+static VALUE sAWObjectDataParticles; // ruby equivalent to aw_object_data_particles
+static VALUE sAWObjectDataCamera; // ruby equivalent to aw_object_data_camera;
+
+sAWVector = rb_struct_define("AWVector", "x", "y", "z", NULL);
+sAWVectorRange = rb_struct_define("AWVectorRange", "min", "max", NULL);
+sAWObjectDataZone = rb_struct_define("AWObjectDataZone", "size", "version",
+  "shape", "priority", "gravity", "friction", "flags", "color", "fog_min",
+  "fog_max", "footstep_len", "ambient_len", "camera_len", "target_cur_len",
+  "str_data", NULL);
+sAWObjectDataParticles = rb_struct_define("AWObjectDataParticles", 
+  "volume", "version", "speed", "accel", "angle", "spin", "size",
+  "release_min", "release_max", "release_size", "lifespan",
+  "emitter_lifespan", "fade_in", "fade_out", "color_start", "color_end",
+  "opacity", "render_style", "flags", "asset_list_len", "name_len",
+  "str_data", NULL);
+sAWObjectDataCamera = rb_struct_define("AWObjectDataCamera", 
+  "version", "flags", "zoom", "name_len", "str_data", NULL );
+sAWObjectDataMover = rb_struct_define();
 
 void ruby_aw_bot_mark(void* p) { 
   rb_gc_mark(((RUBY_AW_APPLICATION*) p)->ruby_self); 
