@@ -1,7 +1,7 @@
 
 spec = Gem::Specification.new do |s|
   s.name = %q{ruby_activeworld}
-  s.version = "0.2"
+  s.version = "0.3"
   s.rubygems_version = "1.3.1"
 
   s.homepage = "http://github.com/adamaig/ruby_activeworld/tree/master"
