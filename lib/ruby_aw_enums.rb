@@ -1371,14 +1371,14 @@ module RubyActiveworldEnums
       :AW_CAV_RATING => 407,
       :AW_WORLD_ALLOW_CITIZEN_WHISPER => 145,
       :AW_UNIVERSE_BUILD_NUMBER => 14,
-      :AW_EJECTION_CREATION_TIME => 276,
+      :AW_EJECTION_CREATION_TIME => 276
     },
     :AW_AVATAR_SET_FLAGS => {
       :AW_AVATAR_SET_NONE => 0,
       :AW_AVATAR_SET_POSITION => 1,
       :AW_AVATAR_SET_TYPE => 2,
       :AW_AVATAR_SET_GESTURE => 4,
-      :AW_AVATAR_SET_STATE => 8,
+      :AW_AVATAR_SET_STATE => 8
     },
     :AW_AVATAR_STATES => {
       :AW_AVATAR_STATE_RIDING => 7,
@@ -1392,7 +1392,7 @@ module RubyActiveworldEnums
       :AW_AVATAR_STATE_CLIMBING => 11,
       :AW_AVATAR_STATE_WALKING => 0,
       :AW_AVATAR_STATE_WARPING => 6,
-      :AW_AVATAR_STATE_RUNNING => 1,
+      :AW_AVATAR_STATE_RUNNING => 1
     },
     :AW_CALLBACK => {
       :AW_CALLBACK_CAV => 38,
@@ -1438,21 +1438,21 @@ module RubyActiveworldEnums
       :AW_MAX_CALLBACK => 43,
       :AW_CALLBACK_TERRAIN_LOAD_NODE_RESULT => 32,
       :AW_CALLBACK_ADMIN_WORLD_RESULT => 21,
-      :AW_CALLBACK_SEND_FILE => 10,
+      :AW_CALLBACK_SEND_FILE => 10
     },
     :AW_CAMERA_FLAGS => {
-      :AW_CAMERA_FLAG_TRACK_USER => 1,
+      :AW_CAMERA_FLAG_TRACK_USER => 1
     },
     :AW_CAMERA_TYPES => {
       :AW_CAMERA_TRACK_AHEAD => 3,
       :AW_CAMERA_TRACK_DEFAULT => 0,
       :AW_CAMERA_TRACK_AVATAR => 1,
-      :AW_CAMERA_TRACK_OBJECT => 2,
+      :AW_CAMERA_TRACK_OBJECT => 2
     },
     :AW_CHAT_TYPES => {
       :AW_CHAT_SAID => 0,
       :AW_CHAT_BROADCAST => 1,
-      :AW_CHAT_WHISPER => 2,
+      :AW_CHAT_WHISPER => 2
     },
     :AW_CONNECTION_STATES => {
       :AW_CONNECTION_STATE_CONNECTING_TO_TUNNEL => 3,
@@ -1461,7 +1461,7 @@ module RubyActiveworldEnums
       :AW_CONNECTION_STATE_NOT_CONNECTED => 0,
       :AW_CONNECTION_STATE_PASSWORD_REQUIRED => 6,
       :AW_CONNECTION_STATE_CONNECTING_TO_PROXY => 1,
-      :AW_CONNECTION_STATE_NEGOTIATING_WITH_PROXY => 2,
+      :AW_CONNECTION_STATE_NEGOTIATING_WITH_PROXY => 2
     },
     :AW_CONNECTION_TYPES => {
       :AW_CONNECTION_PROXY_AUTH_NTLM => 5,
@@ -1470,7 +1470,7 @@ module RubyActiveworldEnums
       :AW_CONNECTION_FIREWALL_NO_PROXY => 1,
       :AW_CONNECTION_PROXY_AUTO => 2,
       :AW_CONNECTION_PROXY_NO_AUTH => 3,
-      :AW_CONNECTION_PROXY_BASIC => 4,
+      :AW_CONNECTION_PROXY_BASIC => 4
     },
     :AW_CONTACT_STATES => {
       :AW_CONTACT_OFFLINE => 0,
@@ -1478,16 +1478,16 @@ module RubyActiveworldEnums
       :AW_CONTACT_NOT_A_CITIZEN => 2,
       :AW_CONTACT_AFK => 3,
       :AW_CONTACT_UNKNOWN => 4,
-      :AW_CONTACT_DELETE => 5,
+      :AW_CONTACT_DELETE => 5
     },
     :AW_EJECTION_TYPES => {
       :AW_EJECT_BY_ADDRESS => 0,
       :AW_EJECT_BY_COMPUTER => 1,
-      :AW_EJECT_BY_CITIZEN => 2,
+      :AW_EJECT_BY_CITIZEN => 2
     },
     :AW_ENTITY_TYPES => {
       :AW_ENTITY_AVATAR => 0,
-      :AW_ENTITY_MOVER => 1,
+      :AW_ENTITY_MOVER => 1
     },
     :AW_EVENT_ATTRIBUTE => {
       :AW_EVENT_HUD_CLICK => 47,
@@ -1541,7 +1541,7 @@ module RubyActiveworldEnums
       :AW_EVENT_ENTITY_DELETE => 41,
       :AW_EVENT_TERRAIN_CHANGED => 30,
       :AW_EVENT_OBJECT_SELECT => 19,
-      :AW_EVENT_OBJECT_DELETE => 8,
+      :AW_EVENT_OBJECT_DELETE => 8
     },
     :AW_HUD_ELEMENT_FLAGS_ENUM => {
       :AW_HUD_ELEMENT_FLAG_UNIVERSE_PATH => 64,
@@ -1552,7 +1552,7 @@ module RubyActiveworldEnums
       :AW_HUD_ELEMENT_FLAG_SIZE_PERCENT => 8,
       :AW_HUD_ELEMENT_FLAG_TRANSITION => 16,
       :AW_HUD_ELEMENT_FLAG_TEMPORARY => 32,
-      :AW_HUD_ELEMENT_FLAG_CLICKS => 1,
+      :AW_HUD_ELEMENT_FLAG_CLICKS => 1
     },
     :AW_HUD_ORIGIN_TYPES => {
       :AW_HUD_ORIGIN_CENTER => 4,
@@ -1563,12 +1563,12 @@ module RubyActiveworldEnums
       :AW_HUD_ORIGIN_BOTTOM => 7,
       :AW_HUD_ORIGIN_TOP_RIGHT => 2,
       :AW_HUD_ORIGIN_BOTTOM_RIGHT => 8,
-      :AW_HUD_ORIGIN_LEFT => 3,
+      :AW_HUD_ORIGIN_LEFT => 3
     },
     :AW_HUD_TYPES => {
       :AW_HUD_TYPE_TEXT => 0,
       :AW_HUD_TYPE_IMAGE => 1,
-      :AW_HUD_TYPE_MODEL => 2,
+      :AW_HUD_TYPE_MODEL => 2
     },
     :AW_MOVER_FLAGS => {
       :AW_MOVER_FLAG_TILT_BY_TERRAIN => 2097152,
@@ -1596,7 +1596,7 @@ module RubyActiveworldEnums
       :AW_MOVER_FLAG_DISABLE_MOVE => 1048576,
       :AW_MOVER_FLAG_NO_AUTO_YAW => 512,
       :AW_MOVER_FLAG_EXIT_EJECT_UP => 32768,
-      :AW_MOVER_FLAG_CLICK_PAUSE => 16,
+      :AW_MOVER_FLAG_CLICK_PAUSE => 16
     },
     :AW_MOVER_STATE_TYPES => {
       :AW_MOVER_STATE_MOVE => 2,
@@ -1605,12 +1605,12 @@ module RubyActiveworldEnums
       :AW_MOVER_STATE_STOP => 5,
       :AW_MOVER_STATE_IDLE => 0,
       :AW_MOVER_STATE_RESET => 6,
-      :AW_MOVER_STATE_START => 1,
+      :AW_MOVER_STATE_START => 1
     },
     :AW_MOVER_TYPES => {
       :AW_MOVER_TYPE_PASSIVE => 0,
       :AW_MOVER_TYPE_ACTIVE => 1,
-      :AW_MOVER_TYPE_ITEM => 2,
+      :AW_MOVER_TYPE_ITEM => 2
     },
     :AW_OBJECT_TYPES => {
       :AW_MAX_OBJECT_TYPES => 6,
@@ -1619,12 +1619,12 @@ module RubyActiveworldEnums
       :AW_OBJECT_TYPE_PARTICLES => 3,
       :AW_OBJECT_TYPE_MOVER => 4,
       :AW_OBJECT_TYPE_CAMERA => 5,
-      :AW_OBJECT_TYPE_V3 => 0,
+      :AW_OBJECT_TYPE_V3 => 0
     },
     :AW_PARTICLE_DRAW_STYLES => {
       :AW_PARTICLE_DRAW_GLOW => 2,
       :AW_PARTICLE_DRAW_NORMAL => 0,
-      :AW_PARTICLE_DRAW_BRIGHT => 1,
+      :AW_PARTICLE_DRAW_BRIGHT => 1
     },
     :AW_PARTICLE_FLAGS => {
       :AW_PARTICLE_FLAG_CAMERA_EMIT => 16,
@@ -1632,33 +1632,33 @@ module RubyActiveworldEnums
       :AW_PARTICLE_FLAG_INTERPOLATE => 1,
       :AW_PARTICLE_FLAG_GRAVITY => 2,
       :AW_PARTICLE_FLAG_COLLIDE_ZONES => 4,
-      :AW_PARTICLE_FLAG_ZONE_EXCLUSIVE => 8,
+      :AW_PARTICLE_FLAG_ZONE_EXCLUSIVE => 8
     },
     :AW_PARTICLE_TYPES => {
       :AW_PARTICLE_TYPE_FACER => 1,
       :AW_PARTICLE_TYPE_FLAT => 2,
       :AW_PARTICLE_TYPE_OBJECT => 3,
-      :AW_PARTICLE_TYPE_SPRITE => 0,
+      :AW_PARTICLE_TYPE_SPRITE => 0
     },
     :AW_PRIVACY_TYPES => {
-      :AW_PRIVACY_BLOCK_TELEGRAMS => 1,
+      :AW_PRIVACY_BLOCK_TELEGRAMS => 1
     },
     :AW_REGISTER_METHODS => {
       :AW_REGISTER_MONTHLY => 0,
       :AW_REGISTER_ANNUAL => 1,
-      :AW_REGISTER_USER => 2,
+      :AW_REGISTER_USER => 2
     },
     :AW_SERVER_STATES => {
       :AW_SERVER_STOPPED => 0,
       :AW_SERVER_STARTING => 1,
       :AW_SERVER_START_WAIT => 2,
-      :AW_SERVER_RUNNING => 3,
+      :AW_SERVER_RUNNING => 3
     },
     :AW_WORLD_STATES => {
       :AW_WORLDSTATUS_UNKNOWN => 0,
       :AW_WORLDSTATUS_PUBLIC => 1,
       :AW_WORLDSTATUS_PRIVATE => 2,
-      :AW_WORLDSTATUS_STOPPED => 3,
+      :AW_WORLDSTATUS_STOPPED => 3
     },
     :AW_ZONE_FLAGS => {
       :AW_ZONE_FLAG_BLOCK_PARTICLES => 2,
@@ -1667,12 +1667,12 @@ module RubyActiveworldEnums
       :AW_ZONE_FLAG_BLOCK_CHAT => 16,
       :AW_ZONE_FLAG_VISIBLE => 32,
       :AW_ZONE_FLAG_WATER => 1,
-      :AW_ZONE_FLAG_BLOCK_JOIN => 64,
+      :AW_ZONE_FLAG_BLOCK_JOIN => 64
     },
     :AW_ZONE_TYPES => {
       :AW_ZONE_TYPE_CUBE => 0,
       :AW_ZONE_TYPE_CYLINDER => 1,
-      :AW_ZONE_TYPE_SPHERE => 2,
+      :AW_ZONE_TYPE_SPHERE => 2
     }
   }
 end

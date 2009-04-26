@@ -172,7 +172,7 @@ static VALUE ruby_aw_hud_create(VALUE self) {
   return INT2FIX(aw_hud_create ());
 }
 static VALUE ruby_aw_hud_destroy(VALUE self, VALUE session, VALUE id) {
-  return INT2FIX(aw_hud_destroy ( FIX2INT(session), FIX2INT(id)));
+  return INT2FIX(aw_hud_destroy( FIX2INT(session), FIX2INT(id)));
 }
 // I 
 static VALUE ruby_aw_init(VALUE self, VALUE build) {
@@ -314,37 +314,37 @@ static VALUE ruby_aw_say(VALUE self, VALUE message) {
   return INT2FIX(aw_say( StringValuePtr(message) )); 
 } 
 static VALUE ruby_aw_sector_from_cell(VALUE self, VALUE cell) {
-  return INT2FIX(aw_sector_from_cell ( FIX2INT(cell))); 
+  return INT2FIX(aw_sector_from_cell( FIX2INT(cell))); 
 }
 static VALUE ruby_aw_server_world_add(VALUE self) {
   return INT2FIX(aw_server_world_add ());
 }
 static VALUE ruby_aw_server_world_change(VALUE self, VALUE id) {
-  return INT2FIX(aw_server_world_change ( FIX2INT(id)));
+  return INT2FIX(aw_server_world_change( FIX2INT(id)));
 }
 static VALUE ruby_aw_server_world_delete(VALUE self, VALUE id) {
-  return INT2FIX(aw_server_world_delete ( FIX2INT(id)));
+  return INT2FIX(aw_server_world_delete( FIX2INT(id)));
 }
 static VALUE ruby_aw_server_world_list(VALUE self) {
-  return INT2FIX(aw_server_world_list ());
+  return INT2FIX(aw_server_world_list());
 }
 static VALUE ruby_aw_server_world_start(VALUE self, VALUE id) {
-  return INT2FIX(aw_server_world_start ( FIX2INT(id)));
+  return INT2FIX(aw_server_world_start( FIX2INT(id)));
 }
 static VALUE ruby_aw_server_world_stop(VALUE self, VALUE id) {
-  return INT2FIX(aw_server_world_stop ( FIX2INT(id)));
+  return INT2FIX(aw_server_world_stop( FIX2INT(id)));
 }
 static VALUE ruby_aw_server_world_set(VALUE self, VALUE id) {
-  return INT2FIX(aw_server_world_set ( FIX2INT(id)));
+  return INT2FIX(aw_server_world_set( FIX2INT(id)));
 }
 static VALUE ruby_aw_server_world_instance_add(VALUE self, VALUE id, VALUE instance_id) {
-  return INT2FIX(aw_server_world_instance_add ( FIX2INT(id), FIX2INT(instance_id)));
+  return INT2FIX(aw_server_world_instance_add( FIX2INT(id), FIX2INT(instance_id)));
 }
 static VALUE ruby_aw_server_world_instance_delete(VALUE self, VALUE id, VALUE instance_id) {
-  return INT2FIX(aw_server_world_instance_delete ( FIX2INT(id), FIX2INT(instance_id)));
+  return INT2FIX(aw_server_world_instance_delete( FIX2INT(id), FIX2INT(instance_id)));
 }
 static VALUE ruby_aw_server_world_instance_set(VALUE self, VALUE id) {
-  return INT2FIX(aw_server_world_instance_set ( FIX2INT(id)));
+  return INT2FIX(aw_server_world_instance_set( FIX2INT(id)));
 }
 static VALUE ruby_aw_session(VALUE self) {
   return INT2FIX(aw_session()); 
@@ -393,7 +393,7 @@ static VALUE ruby_aw_universe_attributes_change(VALUE self) {
   return INT2FIX(aw_universe_attributes_change()); 
 }
 static VALUE ruby_aw_universe_ejection_delete(VALUE self, VALUE address) {
-  return INT2FIX(aw_universe_ejection_delete ( FIX2INT(address)));
+  return INT2FIX(aw_universe_ejection_delete(FIX2INT(address)));
 }
 static VALUE ruby_aw_universe_ejection_lookup(VALUE self) {
   return INT2FIX(aw_universe_ejection_lookup());
