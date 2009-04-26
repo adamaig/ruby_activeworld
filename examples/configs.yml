@@ -1,0 +1,10 @@
+--- 
+:simple_event_config: 
+  :universe_port: 5870
+  :enter_global: true
+  :citizen_id: 1
+  :app_name: SampleBot
+  :worldname: <worldname>
+  :password: <password>
+  :universe_server: <server>
+  
